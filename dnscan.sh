@@ -7,7 +7,7 @@ echo "
 ██║  ██║██║╚██╗██║╚════██║
 ██████╔╝██║ ╚████║███████║
 ╚═════╝ ╚═╝  ╚═══╝╚══════╝
-    https://github.com/m3x/
+    https://github.com/them3x/
     ███████╗ ██████╗ █████╗ ███╗   ██╗
     ██╔════╝██╔════╝██╔══██╗████╗  ██║
     ███████╗██║     ███████║██╔██╗ ██║
@@ -54,7 +54,20 @@ then
 	then
 		ip=$(host $domain | grep "has address" | cut -d " " -f 4 | head -n 1)
 		echo " "
-		if [ "$ip" = "" ]; then echo "Sorry, host [ $domain ] not found"; exit; fi
+		if [ "$ip" = "" ]
+		then
+			echo "Sorry, host [ $domain ] not found"
+			read -p "Continue anyway [Y/n] " conti
+
+			if [ "$conti" = "" ] || [ "$conti" = "Y" ] || [ "$conti" = "y" ]
+			then
+				ip="Not found"
+			else
+				exit
+			fi
+
+		fi
+
 		echo "[$p_mode]"
 		echo "[$domain] [$ip]"
 		echo " "
@@ -87,7 +100,20 @@ then
 
         ip=$(host $domain | grep "has address" | cut -d " " -f 4 | head -n 1)
 	echo " "
-	if [ "$ip" = "" ]; then echo "Sorry, host [ $domain ] not found"; exit; fi
+
+        if [ "$ip" = "" ]
+        then
+                echo "Sorry, host [ $domain ] not found"
+		read -p "Continue anyway [Y/n] " conti
+
+                if [ "$conti" = "" ] || [ "$conti" = "Y" ] || [ "$conti" = "y" ]
+                then
+                        ip="Not found"
+                else
+                        exit
+                fi
+        fi
+
         echo "[$p_mode]"
         echo "[$domain] [$ip]"
         echo " "
