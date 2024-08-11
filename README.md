@@ -4,8 +4,12 @@
 Apenas uma ferramenta que fiz para me ajudar a automatizar alguns testes relacionados ao DNS como:
 
 - Brute force em subdominios
-- Subdomain takeover
-- Transfer zone 
+- Brute force cname
+- Verificação WHOIS
+
+<hr>
+
+Dependencias PYTHON: dnspython
 
 
 > Caso nao possua nenhuma wordlist, esperimente dar uma olhada em
