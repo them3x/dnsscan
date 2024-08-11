@@ -9,8 +9,13 @@ Apenas uma ferramenta que fiz para me ajudar a automatizar alguns testes relacio
 
 <hr>
 
+#### Modo de uso
+```
+python3 dnsscan.py
+```
+
+
 Dependencias PYTHON: dnspython
-
-
+<hr>
 > Caso nao possua nenhuma wordlist, esperimente dar uma olhada em
 > https://github.com/them3x/wordlists
